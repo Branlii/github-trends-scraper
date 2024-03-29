@@ -1,7 +1,9 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+require('dotenv').config();
 
 async function scrapeWebsite(url) {
+  console.log(process.env.TOKEN)
   try {
     const response = await axios.get(url);
     const html = response.data;
